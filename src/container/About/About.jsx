@@ -1,40 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { images } from '../../constants'
+import { images } from '../../constants';
 
 import './About.scss';
+import { urlFor, client } from '../../client';
 
 const About = () => {
-  const abouts = [
-    {
-      title: 'Web Development',
-      description: 'I am a good developer.',
-      imgUrl: images.about01,
-    },
-    {
-      title: 'Web Design',
-      description: 'I am a good developer.',
-      imgUrl: images.about02,
-    },
-    {
-      title: 'Frontend development',
-      description: 'I am a good developer.',
-      imgUrl: images.about03,
-    },
-    {
-      title: 'Backend development',
-      description: 'I am a good developer.',
-      imgUrl: images.about04,
-    },
-  ];
+  const [abouts, setAbouts] = useState([]);
+
+  // const abouts = [
+  //   {
+  //     title: 'Web Development',
+  //     description: 'I am a good developer.',
+  //     imgUrl: images.about01,
+  //   },
+  //   {
+  //     title: 'Web Design',
+  //     description: 'I am a good developer.',
+  //     imgUrl: images.about02,
+  //   },
+  //   {
+  //     title: 'Frontend development',
+  //     description: 'I am a good developer.',
+  //     imgUrl: images.about03,
+  //   },
+  //   {
+  //     title: 'Backend development',
+  //     description: 'I am a good developer.',
+  //     imgUrl: images.about04,
+  //   },
+  // ];
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+    client.fetch(query).then((data) => {
+      setAbouts(data);
+    });
+  }, []);
   return (
     <>
       <h2 className="head-text">
-        I know That
-        <span>Good Design</span>
+        I know That <span>Good Development</span>
         <br />
-        means
-        <span>good Business</span>
+        means <span>good Business</span>
       </h2>
       <div className="app__profiles">
         {abouts.map((about, index) => (
@@ -46,8 +53,12 @@ const About = () => {
             key={about.title + index}
           >
             <img src={about.imgUrl} alt={about.title} />
-            <h2 className="bold-text" style={{ marginTop: '20px' }}>{about.title}</h2>
-            <p className="p-text" style={{ marginTop: '10px' }}>{about.description}</p>
+            <h2 className="bold-text" style={{ marginTop: '20px' }}>
+              {about.title}
+            </h2>
+            <p className="p-text" style={{ marginTop: '10px' }}>
+              {about.description}
+            </p>
           </motion.div>
         ))}
       </div>
