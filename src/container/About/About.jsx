@@ -1,35 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { images } from '../../constants';
 
+import { AppWrap } from '../../wrapper';
 import './About.scss';
 import { urlFor, client } from '../../client';
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
-
-  // const abouts = [
-  //   {
-  //     title: 'Web Development',
-  //     description: 'I am a good developer.',
-  //     imgUrl: images.about01,
-  //   },
-  //   {
-  //     title: 'Web Design',
-  //     description: 'I am a good developer.',
-  //     imgUrl: images.about02,
-  //   },
-  //   {
-  //     title: 'Frontend development',
-  //     description: 'I am a good developer.',
-  //     imgUrl: images.about03,
-  //   },
-  //   {
-  //     title: 'Backend development',
-  //     description: 'I am a good developer.',
-  //     imgUrl: images.about04,
-  //   },
-  // ];
   useEffect(() => {
     const query = '*[_type == "abouts"]';
     client.fetch(query).then((data) => {
@@ -52,7 +29,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: '20px' }}>
               {about.title}
             </h2>
@@ -66,4 +43,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, 'about');
