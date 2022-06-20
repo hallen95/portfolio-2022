@@ -56,11 +56,19 @@ const Header = () => {
       </motion.div>
 
       <motion.div
+        initial={false}
         variant={scaleVariants}
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[images.react, images.vue, images.sass].map((circle, index) => (
+        {[
+          images.ionic,
+          images.angular,
+          images.git,
+          images.react,
+          images.vue,
+          images.sass,
+        ].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="circle" />
           </div>
