@@ -5,8 +5,9 @@ import { About, Footer, Header, Skills, Testimonials, Work } from './container';
 import { Navbar } from './components';
 import './App.scss';
 const meta = {
-  title: 'BDEV Porfolio | Frontend Developer © 2022',
-  description: 'This porfolio belongs to Brian Ogas, professional web develper',
+  title: 'BDEV Portfolio | Frontend Developer © 2022',
+  description:
+    'This Portfolio belongs to Brian Ogas, professional web develper',
   canonical: 'https://brian-ogas.netlify.app/',
   meta: {
     charSet: 'utf-8',
@@ -19,11 +20,11 @@ const meta = {
       image: 'https://i.postimg.cc/rsLKkgDK/OG.jpg',
     },
     property: {
-      'og:title': 'BDEV Porfolio | Frontend Developer © 2022',
+      'og:title': 'BDEV Portfolio | Frontend Developer © 2022',
       'og:type': 'article',
       'og:image': 'https://i.postimg.cc/rsLKkgDK/OG.jpg',
       'og:site_name':
-        'This porfolio belongs to Brian Ogas, professional web develper',
+        'This Portfolio belongs to Brian Ogas, professional web develper',
       'og:price:amount': '19.50',
       'og:price:currency': 'USD',
       'twitter:site': '@site',
@@ -34,7 +35,7 @@ const meta = {
     ograph: true,
   },
   // title: 'Brian Ogas',
-  // description: 'This porfolio belongs to Brian Ogas, professional web develper',
+  // description: 'This Portfolio belongs to Brian Ogas, professional web develper',
   // canonical: 'https://brian-ogas.netlify.app/',
   // meta: [
   //   {
@@ -45,7 +46,7 @@ const meta = {
   //   {
   //     hid: 'facebook:description',
   //     name: 'facebook:description',
-  //     content: 'This porfolio belongs to Brian Ogas, professional web develper',
+  //     content: 'This Portfolio belongs to Brian Ogas, professional web develper',
   //   },
   //   {
   //     hid: 'facebook:image',
@@ -65,7 +66,7 @@ const meta = {
   //   {
   //     hid: 'og:description',
   //     property: 'og:description',
-  //     content: 'This porfolio belongs to Brian Ogas, professional web develper',
+  //     content: 'This Portfolio belongs to Brian Ogas, professional web develper',
   //   },
   //   {
   //     hid: 'og:image',
