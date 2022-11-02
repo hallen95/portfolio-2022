@@ -106,10 +106,14 @@
     }
   }
   &-content {
+    height: 10rem;
     padding: 0.5rem;
     width: 100%;
     position: relative;
     flex-direction: column;
+    & .p-text {
+      padding-right: 0.5rem;
+    }
     h4 {
       margin-top: 1rem;
       line-height: 1.5;
